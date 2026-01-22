@@ -1,0 +1,495 @@
+<!doctype html>
+<html lang="da">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Malene Hovmand – kropsterapi, coaching og ledercirkler</title>
+  <meta name="description" content="Malene Hovmand tilbyder individuel kropsterapi, coaching og ledercirkler. Book en tid og få ro, retning og balance – i et trygt og professionelt rum." />
+  <style>
+    :root{
+      --bg:#ffffff; --ink:#0f0f10; --muted:#6b6b6f;
+      --card:#fff; --card-b:#e8e8ec; --accent:#111; --accent-2:#232326;
+      --radius:14px; --container:1100px;
+    }
+    *,*::before,*::after{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+    img{max-width:100%;height:auto;display:block}
+
+    /* Knap-par i hero */
+    .pairs{display:grid;gap:.8rem;margin-top:1.2rem}
+    .pair-group{margin-bottom:.4rem}
+    .pair-group h4{
+      color:#e4e4e8;font-size:.95rem;font-weight:500;letter-spacing:.3px;
+      margin:.6rem 0 .25rem 0;text-transform:uppercase;opacity:.9;
+    }
+    .pair{display:grid;grid-template-columns:1fr 1fr;gap:.4rem}
+    @media (max-width:700px){
+      .pair{grid-template-columns:1fr}
+      .pair-group h4{text-align:center}
+    }
+
+    /* Kompakt top i hero */
+    .hero .container{padding-top:.8rem;padding-bottom:1.2rem}
+    .hero-grid{gap:1.2rem}
+    .hero h1{margin-bottom:.4rem}
+    .hero .sub{margin:0 0 .6rem}
+
+    /* Header */
+    header{position:sticky;top:0;z-index:50;background:var(--accent);color:#fff;box-shadow:0 2px 10px rgba(0,0,0,.15)}
+    .nav-wrap{max-width:var(--container);margin:0 auto;padding:.9rem 1rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+    .logo-link{display:flex;align-items:center;gap:.6rem;text-decoration:none;color:inherit}
+    .nav-links{display:flex;gap:1rem;list-style:none;margin:0;padding:0}
+    .nav-links a{color:#fff;text-decoration:none;opacity:.95;padding:.45rem .6rem;border-radius:10px}
+    .nav-links a:hover{opacity:1;background:var(--accent-2)}
+
+    /* Layout */
+    section{scroll-margin-top:88px}
+    .container{max-width:var(--container);margin:0 auto;padding:2rem 1rem}
+    h1,h2,h3{margin:0 0 .6rem 0;line-height:1.3}
+    .lead{font-size:1.08rem;color:var(--muted)}
+    .pill{display:inline-block;background:#f2f3f7;border:1px solid #ececf2;border-radius:999px;padding:.25rem .6rem;font-size:.85rem}
+    .muted{color:#8a8a90}
+    .cluster{display:flex;gap:.6rem;flex-wrap:wrap}
+
+    /* Hero */
+    .hero{background:#111;color:#fff}
+    .hero-grid{display:grid;gap:2rem;align-items:center}
+    @media (min-width:900px){.hero-grid{grid-template-columns:1.1fr 1fr}}
+    .hero .sub{max-width:60ch;color:#cfcfd4}
+    .btn{display:inline-block;padding:.8rem 1.05rem;border-radius:12px;text-decoration:none;font-weight:600;border:1px solid #ddd;transition:background .2s,color .2s,transform .04s}
+    .btn:hover{transform:translateY(-1px)}
+    .btn-primary{background:#fff;color:#111;border-color:#ddd}
+    .btn-primary:hover{background:#f5f5f5}
+    .btn-ghost{background:#f9f9fb;color:#111;border-color:#ddd}
+
+    /* Cards / sektioner */
+    .card{background:var(--card);border:1px solid var(--card-b);border-radius:var(--radius);padding:1.25rem;box-shadow:0 3px 10px rgba(0,0,0,.04)}
+    #ydelser{background:#fafafb;border-block:1px solid #eee}
+
+    /* Accordion */
+    .acc{border:1px solid var(--card-b);border-radius:var(--radius);padding:1rem;background:#fff}
+    .acc + .acc{margin-top:1rem}
+    .acc-head{display:flex;align-items:baseline;gap:.5rem}
+    .acc-num{font-weight:800;min-width:2ch}
+    .acc h3{margin:0}
+    .acc-intro{margin:.4rem 0 .6rem}
+    .acc-panel[hidden]{display:none}
+    .acc-panel{margin-top:.6rem;border-top:1px dashed #e5e5ea;padding-top:.8rem}
+    .panel-inner{display:flex;flex-direction:column;gap:.6rem}
+    .panel-inner .panel-actions{margin-top:.6rem;display:flex;justify-content:flex-end}
+    .panel-inner .panel-actions .close-btn{background:#f1f2f5;border:1px solid #ddd}
+
+    /* Ydelser: side-om-side */
+    .services{display:grid;gap:1rem;margin-top:1rem}
+    @media(min-width:900px){.services{grid-template-columns:repeat(3,1fr)}}
+    .svc-card .muted{color:#666}
+
+    /* Cal embeds (ikke i brug, men behold klassen) */
+    .embed{min-width:320px;height:750px;border:1px solid #e9eaee;border-radius:16px;overflow:hidden;background:#fff}
+
+    /* Logos */
+    .brand-logo{height:28px;width:auto;display:block}
+    @media (min-width:900px){.brand-logo{height:32px}}
+    .svc-logo{height:44px;width:auto;margin:0 0 .6rem 0;display:block}
+    .footer-logo{height:22px;width:auto;vertical-align:middle;margin-right:.5rem;opacity:.9}
+
+    footer{border-top:1px solid #eee;background:#f7f7f8;color:#444}
+    footer .container{padding:1.2rem 1rem;font-size:.95rem}
+  </style>
+</head>
+<body id="top">
+  <!-- NAV -->
+  <header>
+    <div class="nav-wrap" role="navigation" aria-label="Primær">
+      <a href="#top" class="logo-link" aria-label=" forside Malene Hovmand">
+        <!-- Header-logo: korrekt sti + cache-busting -->
+        <img class="brand-logo" src="assets/hovmand-logo.png?v=2" alt="Malene Hovmand forside" />
+      </a>
+      <ul class="nav-links">
+        <li><a href="#om">Om</a></li>
+        <li><a href="#ydelser">Ydelser</a></li>
+        <li><a href="#booking">Book</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <h1>Stedet for nærvær og indsigt – både individuelt og i fællesskab</h1>
+        <p class="sub">
+          Jeg tilbyder individuel coaching, initiering af ledercirkler og individuel kropsterapi –
+          som en naturlig forlængelse af mange års arbejde med mennesker, læring og ledelse.
+        </p>
+        <div class="pairs">
+          <!-- Coaching -->
+          <div class="pair-group">
+            <h4>Coaching</h4>
+            <div class="pair">
+              <a class="btn btn-ghost" href="#open:coaching">Læs om coaching</a>
+              <a class="btn btn-primary" href="#booking-coachsession">Book coachsession</a>
+            </div>
+          </div>
+          <!-- Kropsterapi -->
+          <div class="pair-group">
+            <h4>Kropsterapi</h4>
+            <div class="pair">
+              <a class="btn btn-ghost" href="#open:krop">Læs om kropsterapi</a>
+              <a class="btn btn-primary" href="#booking-kropsterapi">Book kropsterapi</a>
+            </div>
+          </div>
+          <!-- Ledercirkler -->
+          <div class="pair-group">
+            <h4>Ledercirkler</h4>
+            <div class="pair">
+              <a class="btn btn-ghost" href="#open:leder">Læs om ledercirkler</a>
+              <a class="btn btn-primary" href="#booking-ledercirkel">Book ledercirklen</a>
+            </div>
+          </div>
+          <!-- Om mig -->
+          <div class="pair-group">
+            <h4>Om mig</h4>
+            <div class="pair">
+              <a class="btn btn-ghost" href="om-mig.html">Læs mere om mig</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <img src="Malene foto.jpeg" alt="Malene Hovmand" style="border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,.35)">
+      </div>
+    </div>
+  </section>
+
+  <!-- OM -->
+  <section id="om">
+    <div class="container">
+      <div class="card">
+        <div class="pill" aria-hidden="true">Disse ydelser tilbyder jeg</div>
+        <h2 style="margin-top:.6rem">Professionel støtte til udvikling og forandring</h2>
+        <p class="lead">
+          Jeg arbejder roligt, nærværende og respektfuldt med mennesker. Mit udgangspunkt er,
+          at krop og sind hænger sammen – og at varige forandringer skabes, når vi mødes trygt,
+          ærligt og nysgerrigt.
+        </p>
+
+        <!-- 1) Coaching -->
+        <article class="acc" id="acc-coaching">
+          <div class="acc-head"><span class="acc-num">1)</span><h3 id="coaching-heading">Coaching</h3></div>
+          <p class="acc-intro">
+            Coaching skaber klarhed og handlemuligheder, så du kan bevæge dig i en retning, der føles meningsfuld for dig. 
+            I coachsamtalerne skaber jeg et trygt rum, hvor vi sammen undersøger dine udfordringer og muligheder.
+            Gennem spørgsmål og refleksion får du nye perspektiver, klarhed og konkrete handlemuligheder.
+          </p>
+          <button class="pill open-btn" aria-expanded="false" aria-controls="panel-coaching" data-target="panel-coaching">Læs mere</button>
+
+          <div id="panel-coaching" class="acc-panel" role="region" aria-labelledby="coaching-heading" hidden>
+            <div class="panel-inner">
+              <div class="panel-slot" data-tpl="tpl-coaching"></div>
+              <div class="panel-actions">
+                <button class="pill close-btn" data-target="panel-coaching">Luk</button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 2) Ledercirkler -->
+        <article class="acc" id="acc-leder">
+          <div class="acc-head"><span class="acc-num">2)</span><h3 id="leder-heading">Ledercirkler</h3></div>
+          <p class="acc-intro">
+            Ledercirkler er et fortroligt fællesskab, hvor ledere deler erfaringer og styrker hinandens handlekraft. 
+            Jeg faciliterer ledercirkler, hvor erfarne kollegaer deler erfaringer og kvalificerer de gode løsninger.
+            Rummet er fortroligt, og fællesskabet giver energi og nye veje til at håndtere ledelsesopgaven.
+          </p>
+          <button class="pill open-btn" aria-expanded="false" aria-controls="panel-leder" data-target="panel-leder">Læs mere</button>
+
+          <div id="panel-leder" class="acc-panel" role="region" aria-labelledby="leder-heading" hidden>
+            <div class="panel-inner">
+              <div class="panel-slot" data-tpl="tpl-leder"></div>
+              <div class="panel-actions">
+                <button class="pill close-btn" data-target="panel-leder">Luk</button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 3) Kropsterapi -->
+        <article class="acc" id="acc-krop">
+          <div class="acc-head"><span class="acc-num">3)</span><h3 id="krop-heading">Kropsterapi</h3></div>
+          <p class="acc-intro">
+            Kombination af berøring og samtale, der skaber ro, balance og styrker nervesystemet.
+            I kropsterapien kombinerer jeg berøring og samtale for at skabe ro, balance og kontakt til kroppen.
+            Målet er at styrke nervesystemets regulering og give plads til både nærvær og forandring.
+          </p>
+          <button class="pill open-btn" aria-expanded="false" aria-controls="panel-krop" data-target="panel-krop">Læs mere</button>
+
+          <div id="panel-krop" class="acc-panel" role="region" aria-labelledby="krop-heading" hidden>
+            <div class="panel-inner">
+              <div class="panel-slot" data-tpl="tpl-krop"></div>
+              <div class="panel-actions">
+                <button class="pill close-btn" data-target="panel-krop">Luk</button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- YDELSER – samme tekst side-om-side via templates -->
+  <section id="ydelser">
+    <div class="container">
+      <h2>Ydelser</h2>
+      <div class="services">
+        <div class="svc-slot" data-tpl="tpl-krop"></div>
+        <div class="svc-slot" data-tpl="tpl-coaching"></div>
+        <div class="svc-slot" data-tpl="tpl-leder"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOKING -->
+  <section id="booking" class="container">
+    <h2>Book en tid</h2>
+    <p class="muted">Vælg den ydelse og det tidspunkt, der passer dig.</p>
+
+    <!-- COACHSESSION -->
+    <h3 id="booking-coachsession">Coachsession</h3>
+    <p><a class="btn btn-primary" href="https://cal.com/malene-hovmand-tuddft/coach-session?overlayCalendar=true" target="_blank" rel="noopener">Åbn coachsession-booking i ny fane</a></p>
+
+    <!-- KROPSTERAPI -->
+    <h3 id="booking-kropsterapi" style="margin-top:2rem">Individuel kropsterapi</h3>
+    <p><a class="btn btn-primary" href="https://cal.com/malene-hovmand-tuddft/individuel-kropsterapi-60-min?overlayCalendar=true" target="_blank" rel="noopener">Åbn kropsterapi-booking i ny fane</a></p>
+
+    <!-- LEDERCIRKEL -->
+    <h3 id="booking-ledercirkel" style="margin-top:2rem">Ledercirkel</h3>
+    <p><a class="btn btn-ghost" href="https://cal.com/malene-hovmand-tuddft/leder-cirkel-120-minutter-10-gange" target="_blank" rel="noopener">Åbn ledercirkel-booking i ny fane</a></p>
+  </section>
+
+  <!-- KONTAKT -->
+  <section id="kontakt">
+    <div class="container">
+      <h2>Kontakt</h2>
+      <div class="card">
+        <p class="lead">Har du spørgsmål – eller vil du høre, om et forløb er det rigtige for dig?</p>
+        <div class="cluster" style="margin-top:.6rem">
+          <a class="btn btn-primary" href="tel:+4520723144">Ring 20 72 31 44</a>
+          <a class="btn btn-ghost" href="mailto:malene2705@gmail.com">Skriv mail</a>
+        </div>
+        <p class="muted" style="margin-top:.6rem">Mødested for individuel kropsterapi aftales i bookingen. Ledercirkler afholdes hos jer.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <!-- Footer-logo: korrekt sti + cache-busting -->
+      <img class="footer-logo" src="assets/hovmand-logo.png?v=2" alt="Malene Hovmand logo" />
+      © <span id="y"></span> Hovmand • Kropsterapi • Coaching • Ledercirkler
+    </div>
+  </footer>
+
+  <!-- === Skabeloner (én sandhed for hver ydelse) === -->
+  <template id="tpl-coaching">
+    <div class="card svc-card">
+      <!-- Service-logoer med korrekt sti + cache-busting -->
+      <img class="svc-logo" src="assets/coaching-logo.png?v=2" alt="Coaching-logo" />
+      <h3>Coaching – nærvær og retning</h3>
+      <p class="muted" style="margin:0 0 .25rem">
+        Jeg tilbyder coaching til dig, der ønsker klarhed, udvikling og handlekraft i dit liv eller arbejdsliv.
+        Gennem fortrolige samtaler får du støtte til at se nye muligheder, skabe overblik og tage næste skridt.
+      </p>
+      <p class="muted" style="margin:0">I et coachingforløb kan vi arbejde med bl.a.:</p>
+      <ul class="muted" style="margin:.25rem 0 0 1.2rem">
+        <li>Afklaring af mål og værdier</li>
+        <li>Personlig udvikling og trivsel</li>
+        <li>Håndtering af forandringer og valg</li>
+        <li>Styrkelse af ledelseskompetencer</li>
+        <li>Balance mellem arbejde og privatliv</li>
+      </ul>
+      <p class="muted" style="margin:.4rem 0 0">
+        Coaching giver dig et trygt rum, hvor du kan arbejde med det, der er vigtigt for dig – med fokus på konkrete handlinger og nye perspektiver.
+      </p>
+      <div class="cluster" style="margin-top:.6rem">
+        <a class="btn btn-primary" href="#booking-coachsession">Book coaching</a>
+        <a class="btn btn-ghost" href="tel:+4520723144">Ring 20 72 31 44</a>
+      </div>
+    </div>
+  </template>
+
+  <template id="tpl-leder">
+    <div class="card svc-card">
+      <img class="svc-logo" src="assets/ledercirkler-logo.png?v=2" alt="Ledercirkler-logo" />
+      <h3>Ledercirkler</h3>
+      <p class="muted" style="margin:0 0 .25rem">
+        <strong>Styrke gennem fællesskab og refleksion</strong><br/>
+        Jeg initierer fortrolige samtaler mellem ledere om konkrete udfordringer.
+        Deltagerne møder kompetente kollegaer, får nye perspektiver og kvalificerer
+        de gode løsninger sammen.
+      </p>
+      <ul class="muted" style="margin:.25rem 0 0 1.2rem">
+        <li>10 møder á 120 minutter</li>
+        <li>Bookes samlet af virksomheden (max 8 deltagere)</li>
+        <li>Afholdes hos jer – adresse &amp; lokale angives ved booking</li>
+      </ul>
+      <div class="cluster" style="margin-top:.6rem">
+        <a class="btn btn-ghost" href="#booking-ledercirkel">Book ledercirklen</a>
+        <a class="btn btn-ghost" href="mailto:malene2705@gmail.com?subject=Ledercirkler%20-%20forespørgsel">Skriv en mail</a>
+      </div>
+    </div>
+  </template>
+
+  <template id="tpl-krop">
+    <!-- Billede til venstre, tekst til højre -->
+    <div class="card svc-card" style="display:grid;grid-template-columns:1fr 1.2fr;align-items:center;gap:2rem;">
+      <div>
+        <img src="Malene foto1.jpeg" alt="Malene Hovmand"
+             style="border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,.35);width:100%;max-width:420px;">
+      </div>
+      <div>
+        <img class="svc-logo" src="assets/kropsterapi-logo.png?v=2" alt="Kropsterapi-logo" />
+        <h3>Individuel kropsterapi</h3>
+        <p class="muted">
+          Individuel kropsterapi – Manuvision elevbehandling
+
+Jeg er i gang med Manuvision-uddannelsen og tilbyder derfor elevbehandlinger til reduceret pris.
+
+Manuvision kropsterapi arbejder med både krop og sind. Vi forløser spændinger, skaber ro og bringer kroppen i balance – ofte med bedre bevægelighed og mere energi til følge.
+        </p>
+        <p class="muted" style="margin:0">I behandlingen kan indgå:</p>
+        <ul class="muted" style="margin:.25rem 0 0 1.2rem">
+          <li>Massage og kropsterapi</li>
+          <li>Akupressur</li>
+          <li>Stræk og ledmobilisering</li>
+          <li>Åndedrætsteknikker</li>
+          <li>Samtale og bevidstgørelse</li>
+        </ul>
+        <p class="muted" style="margin:.4rem 0 0">
+          Giver mening ved spændinger, uro, smerter eller ubalance – og som løbende
+          vedligehold af trivsel og forebyggelse af stress.
+Behandlingen tager altid udgangspunkt i dig – i det, du kommer med lige nu. Det kan være spændinger, uro, smerter, stress eller ubalance – eller blot et ønske om at mærke dig selv tydeligere og give kroppen et pusterum.
+
+Mange oplever bagefter mere ro, frihed og klarhed – andre får først og fremmest en god pause midt i hverdagen.
+Der er ikke noget, du skal kunne. Kom, som du er.
+
+📍 Sted: på Bryggen
+💰 Pris: 300 kr
+        </p>
+        <div class="cluster" style="margin-top:.6rem">
+          <a class="btn btn-primary" href="#booking-kropsterapi">Book kropsterapi</a>
+          <a class="btn btn-ghost" href="tel:+4520723144">Ring 20 72 31 44</a>
+        </div>
+      </div>
+    </div>
+  </template>
+  <!-- === /Skabeloner === -->
+
+  <!-- Cal.com (kun til knapperne – ingen inline embeds) -->
+  <script src="https://cal.com/embed.js" async></script>
+  <script>
+    // Årstal i footer
+    document.addEventListener('DOMContentLoaded', function(){
+      const y = document.getElementById('y');
+      if (y) y.textContent = new Date().getFullYear();
+    });
+
+    // Indsæt skabeloner to steder (accordion + ydelser)
+    function injectTemplates(){
+      document.querySelectorAll('[data-tpl]').forEach(slot=>{
+        const id = slot.getAttribute('data-tpl');
+        const tpl = document.getElementById(id);
+        if (tpl && 'content' in tpl){
+          slot.innerHTML = '';
+          slot.appendChild(tpl.content.cloneNode(true));
+        }
+      });
+    }
+    if (document.readyState === 'loading'){
+      document.addEventListener('DOMContentLoaded', injectTemplates);
+    } else {
+      injectTemplates();
+    }
+
+    // Accordion
+    function closeAll(){
+      document.querySelectorAll('.acc-panel').forEach(p=>p.hidden=true);
+      document.querySelectorAll('.open-btn').forEach(b=>{
+        b.setAttribute('aria-expanded','false');
+        b.style.display='inline-block';
+      });
+    }
+    function openPanel(id, openBtn){
+      const panel=document.getElementById(id);
+      if(!panel) return;
+      closeAll();
+      panel.hidden=false;
+      if(openBtn){openBtn.setAttribute('aria-expanded','true');openBtn.style.display='none';}
+    }
+    function closePanel(id){
+      const panel=document.getElementById(id);
+      if(!panel) return;
+      panel.hidden=true;
+      const openBtn=document.querySelector('.open-btn[data-target="'+id+'"]');
+      if(openBtn){
+        openBtn.setAttribute('aria-expanded','false');
+        openBtn.style.display='inline-block';
+        const acc=openBtn.closest('.acc');
+        if(acc) acc.scrollIntoView({behavior:'smooth',block:'start'});
+      }
+    }
+    document.addEventListener('click', function(ev){
+      const openBtn=ev.target.closest('.open-btn');
+      if(openBtn){openPanel(openBtn.getAttribute('data-target'), openBtn);return;}
+      const closeBtn=ev.target.closest('.close-btn');
+      if(closeBtn){closePanel(closeBtn.getAttribute('data-target'));}
+    });
+
+    // Deep links: #open:coaching / #open:krop / #open:leder + #book:*
+    function handleHash(){
+      const h = (location.hash || '').toLowerCase().replace('#','');
+      const openMap = {
+        'open:coaching': 'panel-coaching',
+        'open:krop':     'panel-krop',
+        'open:leder':    'panel-leder'
+      };
+      const bookMap = {
+        'book:coaching': 'booking-coachsession',
+        'book:krop':     'booking-kropsterapi',
+        'book:leder':    'booking-ledercirkel'
+      };
+
+      if (openMap[h]) {
+        const openBtn = document.querySelector('.open-btn[data-target="'+openMap[h]+'"]');
+        setTimeout(() => {
+          openPanel(openMap[h], openBtn || null);
+          const acc = document.getElementById(openMap[h])?.closest('.acc');
+          if (acc) acc.scrollIntoView({behavior:'smooth', block:'start'});
+        }, 60);
+        return;
+      }
+      if (bookMap[h]) {
+        const el = document.getElementById(bookMap[h]);
+        if (el) el.scrollIntoView({behavior:'smooth', block:'start'});
+      }
+    }
+    window.addEventListener('hashchange', handleHash);
+    document.addEventListener('DOMContentLoaded', handleHash);
+  </script>
+
+  <noscript>
+    <div class="container" style="margin-top:1rem">
+      <p>JavaScript er slået fra. Du kan stadig booke via disse links:</p>
+      <ul>
+        <li><a href="https://cal.com/malene-hovmand-tuddft/coach-session" target="_blank" rel="noopener">Coachsession</a></li>
+        <li><a href="https://cal.com/malene-hovmand-tuddft/individuel-kropsterapi-60-min" target="_blank" rel="noopener">Individuel kropsterapi</a></li>
+        <li><a href="https://cal.com/malene-hovmand-tuddft/leder-cirkel-120-minutter-10-gange" target="_blank" rel="noopener">Ledercirkel</a></li>
+      </ul>
+    </div>
+  </noscript>
+</body>
+</html>
+11:29 31-10-202511:29 31-10-2025
