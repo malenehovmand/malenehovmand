@@ -491,7 +491,7 @@ Behandlingen kombinerer berøring og samtale og kan give kroppen bedre mulighed 
           openPanel(openMap[h], openBtn || null);
           const acc = document.getElementById(openMap[h])?.closest('.acc');
           if (acc) acc.scrollIntoView({behavior:'smooth', block:'start'});
-        }, 60);
+        }, 500);
         return;
       }
       if (bookMap[h]) {
