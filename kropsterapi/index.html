@@ -1,0 +1,569 @@
+<!doctype html>
+
+<html lang="da">
+
+<head>
+
+  <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Kropsterapi på Islands Brygge | Malene Hovmand</title>
+
+  <meta name="description" content="Elevbehandling i kropsterapi på Islands Brygge. En behandling, der samler krop og sind. 60 minutter / 550 kr.">
+
+  <meta property="og:title" content="Kropsterapi på Islands Brygge">
+
+  <meta property="og:description" content="En behandling, der samler krop og sind. Book 60 minutters elevbehandling hos Malene Hovmand.">
+
+  <meta property="og:type" content="website">
+
+  <meta property="og:url" content="https://malenehovmand.dk/kropsterapi/">
+
+  <meta property="og:image" content="https://malenehovmand.dk/Malene%20foto1.jpeg">
+
+  <style>
+
+    :root {
+
+      --ink: #111113;
+
+      --muted: #626268;
+
+      --soft: #f5f5f3;
+
+      --line: #e4e4e7;
+
+      --white: #fff;
+
+      --max: 1040px;
+
+      --radius: 22px;
+
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+
+      margin: 0;
+
+      color: var(--ink);
+
+      background: var(--white);
+
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+
+      line-height: 1.55;
+
+    }
+
+    img {
+
+      display: block;
+
+      max-width: 100%;
+
+    }
+
+    .topbar {
+
+      position: sticky;
+
+      top: 0;
+
+      z-index: 10;
+
+      background: #101011;
+
+      color: var(--white);
+
+      box-shadow: 0 2px 12px rgba(0, 0, 0, .16);
+
+    }
+
+    .topbar-inner {
+
+      width: min(var(--max), calc(100% - 32px));
+
+      margin: 0 auto;
+
+      min-height: 72px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      gap: 20px;
+
+    }
+
+    .brand {
+
+      font-size: 1.05rem;
+
+      font-weight: 750;
+
+    }
+
+    .top-link,
+
+    .button {
+
+      display: inline-flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      min-height: 48px;
+
+      border-radius: 13px;
+
+      padding: .75rem 1.05rem;
+
+      font-weight: 750;
+
+      text-decoration: none;
+
+      transition: transform .15s ease;
+
+    }
+
+    .top-link {
+
+      min-height: 42px;
+
+      padding: .55rem .9rem;
+
+      background: var(--white);
+
+      color: var(--ink);
+
+    }
+
+    .button:hover,
+
+    .top-link:hover {
+
+      transform: translateY(-1px);
+
+    }
+
+    .button-dark {
+
+      background: var(--ink);
+
+      color: var(--white);
+
+      border: 1px solid var(--ink);
+
+    }
+
+    .button-light {
+
+      background: var(--white);
+
+      color: var(--ink);
+
+      border: 1px solid #d8d8dd;
+
+    }
+
+    .wrap {
+
+      width: min(var(--max), calc(100% - 32px));
+
+      margin: 0 auto;
+
+    }
+
+    .hero {
+
+      padding: clamp(42px, 7vw, 84px) 0 42px;
+
+    }
+
+    .eyebrow {
+
+      display: inline-block;
+
+      margin-bottom: 14px;
+
+      padding: .3rem .65rem;
+
+      border-radius: 999px;
+
+      background: #eeeeec;
+
+      color: #444448;
+
+      font-size: .88rem;
+
+      font-weight: 700;
+
+    }
+
+    h1,
+
+    h2 {
+
+      line-height: 1.15;
+
+      letter-spacing: -.025em;
+
+    }
+
+    h1 {
+
+      max-width: 760px;
+
+      margin: 0 0 18px;
+
+      font-size: clamp(2.25rem, 6vw, 4.6rem);
+
+    }
+
+    h2 {
+
+      margin: 0 0 18px;
+
+      font-size: clamp(1.7rem, 4vw, 2.65rem);
+
+    }
+
+    .intro {
+
+      max-width: 730px;
+
+      margin: 0 0 28px;
+
+      color: #353539;
+
+      font-size: clamp(1.1rem, 2vw, 1.35rem);
+
+    }
+
+    .intro strong {
+
+      display: block;
+
+      margin-bottom: 7px;
+
+      color: var(--ink);
+
+      font-size: 1.13em;
+
+    }
+
+    .actions {
+
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 12px;
+
+    }
+
+    .price {
+
+      margin-top: 22px;
+
+      color: var(--muted);
+
+      font-weight: 650;
+
+    }
+
+    .treatment {
+
+      padding: 28px 0 clamp(52px, 8vw, 92px);
+
+    }
+
+    .treatment-card {
+
+      display: grid;
+
+      grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+
+      gap: clamp(28px, 6vw, 68px);
+
+      align-items: center;
+
+      padding: clamp(20px, 4vw, 44px);
+
+      border: 1px solid var(--line);
+
+      border-radius: var(--radius);
+
+      background: var(--soft);
+
+    }
+
+    .portrait {
+
+      width: 100%;
+
+      max-height: 610px;
+
+      object-fit: cover;
+
+      border-radius: 18px;
+
+      box-shadow: 0 16px 40px rgba(0, 0, 0, .17);
+
+    }
+
+    .copy p {
+
+      margin: 0 0 16px;
+
+      color: var(--muted);
+
+    }
+
+    .copy ul {
+
+      margin: 8px 0 20px;
+
+      padding-left: 1.25rem;
+
+      color: #3d3d42;
+
+    }
+
+    .copy li + li {
+
+      margin-top: 6px;
+
+    }
+
+    .booking {
+
+      padding: clamp(52px, 8vw, 88px) 0;
+
+      background: #111113;
+
+      color: var(--white);
+
+      text-align: center;
+
+    }
+
+    .booking p {
+
+      max-width: 620px;
+
+      margin: 0 auto 26px;
+
+      color: #d3d3d7;
+
+      font-size: 1.08rem;
+
+    }
+
+    .booking .actions {
+
+      justify-content: center;
+
+    }
+
+    footer {
+
+      padding: 24px 16px;
+
+      color: #66666b;
+
+      text-align: center;
+
+      font-size: .92rem;
+
+    }
+
+    @media (max-width: 760px) {
+
+      .topbar-inner { min-height: 64px; }
+
+      .brand { font-size: .98rem; }
+
+      .hero { padding-top: 38px; }
+
+      .treatment-card { grid-template-columns: 1fr; }
+
+      .portrait { max-height: 470px; }
+
+      .actions { flex-direction: column; }
+
+      .button { width: 100%; }
+
+      .top-link { width: auto; }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <header class="topbar">
+
+    <div class="topbar-inner">
+
+      <div class="brand">Hovmand – Kropsterapi</div>
+
+      <a class="top-link" href="https://cal.com/malene-hovmand-tuddft/individuel-kropsterapi-60-min">Book tid</a>
+
+    </div>
+
+  </header>
+
+  <main>
+
+    <section class="hero">
+
+      <div class="wrap">
+
+        <span class="eyebrow">Elevbehandling på Islands Brygge</span>
+
+        <h1>Kropsterapi på Islands Brygge</h1>
+
+        <p class="intro">
+
+          <strong>En behandling – der samler krop og sind.</strong>
+
+          Til dig, der mærker spændinger, uro eller træthed i kroppen – eller ønsker et pusterum i en travl hverdag.
+
+        </p>
+
+        <div class="actions">
+
+          <a class="button button-dark" href="https://cal.com/malene-hovmand-tuddft/individuel-kropsterapi-60-min">
+
+            Book behandling – 60 min. / 550 kr.
+
+          </a>
+
+          <a class="button button-light" href="tel:+4520723144">
+
+            Ring 20 72 31 44
+
+          </a>
+
+        </div>
+
+        <div class="price">
+
+          Behandlingen tager udgangspunkt i dig og dine behov.
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <section class="treatment">
+
+      <div class="wrap">
+
+        <div class="treatment-card">
+
+          <div>
+
+            <img
+
+              class="portrait"
+
+              src="../Malene foto1.jpeg"
+
+              alt="Malene Hovmand, kropsterapeut under uddannelse">
+
+          </div>
+
+          <div class="copy">
+
+            <h2>Sådan foregår behandlingen</h2>
+
+            <p>
+
+              Jeg er under uddannelse hos ManuVision og tilbyder elevbehandlinger, der tilpasses dig. Behandlingen kombinerer berøring og samtale og kan give kroppen bedre mulighed for at finde ro, bevægelighed og balance.
+
+            </p>
+
+            <p>I behandlingen kan indgå:</p>
+
+            <ul>
+
+              <li>Massage og kropsterapi</li>
+
+              <li>Akupressur</li>
+
+              <li>Stræk og ledmobilisering</li>
+
+              <li>Opmærksomhed på åndedrættet og kroppen</li>
+
+              <li>Samtale undervejs</li>
+
+            </ul>
+
+            <p>
+
+              Behandlingen tager udgangspunkt i dig og det, du kommer med lige nu.
+
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <section class="booking">
+
+      <div class="wrap">
+
+        <h2>Klar til at booke?</h2>
+
+        <p>
+
+          Vælg en ledig tid, der passer dig. Behandlingen varer 60 minutter og koster 550 kr.
+
+        </p>
+
+        <div class="actions">
+
+          <a class="button button-light" href="https://cal.com/malene-hovmand-tuddft/individuel-kropsterapi-60-min">
+
+            Se ledige tider
+
+          </a>
+
+          <a class="button button-dark" href="tel:+4520723144">
+
+            Ring til Malene
+
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer>
+
+    © 2026 Hovmand – Kropsterapi · Islands Brygge
+
+  </footer>
+
+</body>
+
+</html>
